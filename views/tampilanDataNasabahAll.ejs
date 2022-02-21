@@ -1,0 +1,28 @@
+<%- include("header") -%>
+
+<h3>Daftar Nasabah</h3>
+
+<div class="container my-table">
+  <table>
+    <tr>
+      <th>Nama</th>
+      <th>Alamat</th>
+      <th>Tempat Lahir</th>
+      <th>Tanggal Lahir</th>
+      <th>NIK</th>
+      <th>Nomor HP</th>
+    </tr>
+    <!-- loop tr with td -->
+    <% for (let i = 0; i < foundNasabah.length; i++) { %>
+      <tr>
+        <td><%=foundNasabah[i].nama%></td>
+        <td><%=foundNasabah[i].alamat%></td>
+        <td><%=foundNasabah[i].tptLahir%></td>
+        <td><%=foundNasabah[i].tglLahir%></td>
+        <td><%=foundNasabah[i].nik%></td>
+        <td><%=foundNasabah[i].noHp%></td>
+      </tr>
+    <% } %>
+  </table>
+</div>
+<%- include("footer") -%>

@@ -1,0 +1,40 @@
+<%- include("header") -%>
+
+<h2>WELCOME</h2>
+<div class="grid-container">
+  <form action="/inputUbah" method="post">
+    <div class="container">
+      <h3>Data Nasabah</h3>
+      <label>Nama Lengkap</label>
+      <input type="text" name="namaInp" placeholder="Nama Lengkap">
+      <label>Alamat</label>
+      <input type="text" name="alamatInp" placeholder="Alamat">
+      <label>Tempat Lahir</label>
+      <input type="text" name="tptInp" placeholder="Tempat Lahir">
+      <label>Tanggal Lahir</label>
+      <input type="date" name="tglInp" placeholder="Tanggal Lahir">
+      <label>NIK</label>
+      <input type="text" name="nikInp" placeholder="NIK">
+      <label>Nomor HP</label>
+      <input type="text" name="hpInp" placeholder="No. Handphone">
+
+      <button type="submit" name="inputSub" value="ok">Input Data</button>
+      <button type="submit" name="ubahSub" value="ok">Ubah Data</button>
+      <button type="submit" name="findAll" value="ok">Tampilkan Semua Data</button>
+    </div>
+  </form>
+
+  <form action="/cariHapus" method="post">
+    <div class="container">
+      <h3>Cari atau Hapus Data Nasabah</h3>
+      <label>Masukan NIK</label>
+      <input type="text" name="nik" placeholder="NIK">
+
+      <button type="submit" name="cariSub" value="cari">Cari Data</button>
+      <button type="submit" name="hapusSub" value="hapus">Hapus Data</button>
+    </div>
+  </form>
+
+</div>
+
+<%- include("footer") -%>
