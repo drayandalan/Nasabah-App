@@ -48,14 +48,10 @@ app.get("/tampilanDataAll", function(req, res) {
 });
 
 app.get("/tampilanDataByNik", function(req, res) {
-  let myArray = [];
   Nasabah.findOne({
     nik: nikSelect
   }, function(err, foundbyNik) {
     console.log(foundbyNik);
-    if (!foundbyNik) {
-      foundbyNik = myArray;
-    }
     res.render("tampilanDataNasabahNik", {
       foundbyNik: foundbyNik
     });
@@ -111,10 +107,15 @@ app.post("/inputUbah", function(req, res) {
         }
       }, {
         new: true
-      }, function(err) {
+      }, function(err, found) {
         if (err) {
           res.redirect("/");
-        } else {
+        }
+        else if (!found) {
+          alert("DATA NOT FOUND");
+          res.redirect("/");
+        }
+        else {
           alert("DATA UPDATED");
           res.redirect("/");
         }
